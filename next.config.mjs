@@ -3,6 +3,10 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import rehypeHighlight from 'rehype-highlight';
 
+const nextConfig = {
+  output: 'export',
+};
+
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
@@ -12,5 +16,6 @@ const withMDX = nextMDX({
 });
 
 export default withMDX({
+  nextConfig,
   pageExtensions: ['js', 'jsx', 'tsx', 'ts', 'md', 'mdx'],
 });
