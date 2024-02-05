@@ -103,7 +103,7 @@ main {
   border-radius: 7px;
   box-shadow: 0 0 1px 0.2px #000;
   min-width: 300px;
-  max-width: 500px;
+  max-width: 350px;
 }
 
 .shadow-mat b {

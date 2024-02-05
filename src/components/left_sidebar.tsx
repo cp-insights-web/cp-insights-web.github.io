@@ -11,8 +11,9 @@ function Title() {
 }
 
 function Article(props: {section: string, title: string}) {
+    const path = `/${props.section}/${encodeURIComponent(props.title.replace(/[ /]/g, '_'))}`;
     return (
-        <a className='toc-link' href={`/${props.section}/${encodeURIComponent(props.title)}`}>{props.title}</a>
+        <a className='toc-link' href={path}>{props.title}</a>
     )
 }
 
