@@ -1,0 +1,103 @@
+#toc {
+    z-index: 1;
+}
+
+#toc-sticky {
+    height: 100vh;
+    width: 300px;
+    background: rgba(51, 51, 51, 1);
+    border-right: ridge 0.25px #888888;
+    box-shadow: 0px 0px 2px 0px #000000;
+
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+}
+
+#toc-title {
+    background: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+#toc-title a {
+    text-decoration: none;
+}
+
+.toc-hr {
+    margin: 5px 10px;
+    height: 1px;
+    background-color: var(--accent1);
+}
+
+.toc-item {
+    color: white;   
+}
+
+#toc-content {
+    overflow: scroll;
+    margin: 0px 10px 10px 10px;
+    scrollbar-width: none;
+}
+#toc-content::-webkit-scrollbar { 
+    display: none; 
+}
+
+#toc-division {
+    margin: 0px 10px;
+}
+
+#toc-content h3 {
+    margin: 5px 0px 0px 20px;
+    color: var(--text);
+    font-family: var(--sansserif);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#toc-content a {
+    color: rgb(51, 128, 238);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 2px 0px 2px 35px;
+}
+
+#toc-swap {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    #toc-sticky {
+        position: fixed !important;
+        transition: left 0.5s;
+        left: -300px;
+    }
+
+    #toc-hit-detector {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .toc-shifted {
+        position: fixed !important;
+        left: 0px !important;
+    }
+
+    #toc-swap {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        cursor: pointer;
+        top: 5px;
+        right: 5px;
+        width: 30px;
+        height: 30px;
+    }
+} 

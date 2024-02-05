@@ -1,0 +1,82 @@
+import { Title, Image, Remark, Spoiler } from '@/components/utility'
+
+<Title title={'Reading Problems'} /> 
+
+While CP problems are generally straightforward, there 
+are certain things you should look out for.
+
+## Headline 2
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+### Headline 3
+
+Code Example:
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <set>
+#include <map>
+#include <unordered_set>
+#include <unordered_map>
+#include <queue>
+#include <stack>
+#include <cstring>
+#include <cmath>
+
+using namespace std;
+#define int long long
+
+signed main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n;
+    cin >> n;
+    vector<int> h(n);
+    for (int i = 0; i < n; ++i) cin >> h[i];
+
+    multiset<int> right, left;
+    left.insert(1);
+    for (int i = 0; i < n; ++i) {
+        right.insert(h[i] + i);
+    }
+    right.insert(n);
+
+    int mn = 0;
+    for (int i = 0; i < n; ++i) {
+        int ans = min(*left.begin() + i, *right.begin() - i);
+        mn = max(ans, mn);
+        auto it = right.find(h[i] + i);
+        right.erase(it);
+        left.insert(h[i] - i);
+    }
+
+    cout << mn << endl;
+}
+```
+
+Remark example:
+
+<Remark>
+    This is a remark
+</Remark>
+
+Spoiler example:
+
+<Spoiler
+    title="Reveal Solution">
+```cpp
+    std::cout << "Hello World!" << std::endl;
+```
+</Spoiler>
+
+Image example:
+
+<Image 
+    src={'/paul.jpeg'} 
+    alt={'placeholder'} 
+    width={200}
+    />
+
+Math Example: $\int_{-\infty}^{\infty}e^{-x^2}dx = \sqrt{\pi}$

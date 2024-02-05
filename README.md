@@ -1,1 +1,1 @@
-# cp-insights-web.github.io
+# cp-insights.org
